@@ -1,15 +1,15 @@
-class stack {
+class stackFormula {
 
     constructor(){
-        this.top = -1;
-        this.arr = [];
-        this.max = 10;
+       front = -1;
+        arr = [];
+        max= 10;
     }
 
     push(element){
-        this.top = this.top + 1;
-        if(this.top < this.max){
-            this.arr.push(element);
+       front =front + 1;
+        if(front < max){
+            arr.push(element);
         }
         else{
             return -1;
@@ -18,9 +18,9 @@ class stack {
 
     pop(){
 
-        if(this.top >= 0){
-            this.arr.pop();
-            this.top = this.top - 1;
+        if(front >= 0){
+            arr.pop();
+           front =front - 1;
         }
         else{
             return -1;
@@ -28,13 +28,13 @@ class stack {
     }
 
     peek(){
-        if(this.top >= 0){
-            return this.top(this.arr[top]);
+        if(front >= 0){
+            returnfront(arr[top]);
         }
     }
 
     isEmpty(){
-        if(this.top >= 0){
+        if(front >= 0){
             return false;
         }
         else{
@@ -43,7 +43,7 @@ class stack {
     }
 
     isFull(){
-        if(this.top <= this.max - 1){
+        if(front <= max- 1){
             return true;
         }
         else{
@@ -51,3 +51,6 @@ class stack {
         }
     }
 }
+
+push(2);
+push(2);
