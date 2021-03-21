@@ -1,56 +1,58 @@
-class stackFormula {
+class stack {
 
-    constructor(){
-       front = -1;
-        arr = [];
-        max= 10;
+    constructor() {
+        this.index = -1;
+        this.size = 2;
+        this.arr = [];
     }
 
-    push(element){
-       front =front + 1;
-        if(front < max){
-            arr.push(element);
+    push(number) {
+
+        this.index += 1;
+        if(this.index <= this.size){
+            this.arr.push(number);
+            console.log(this.arr)
         }
-        else{
-            return -1;
+        return -1;
+    }
+
+    pop() {
+        
+        if(this.index >= 0){
+            this.index -= 1;
+           this.arr.pop();
+        }
+        return -1;
+    }
+
+    peek() {
+        if (this.index >= 0) {
+            return arr[index];
         }
     }
 
-    pop(){
-
-        if(front >= 0){
-            arr.pop();
-           front =front - 1;
-        }
-        else{
-            return -1;
-        }
-    }
-
-    peek(){
-        if(front >= 0){
-            returnfront(arr[top]);
-        }
-    }
-
-    isEmpty(){
-        if(front >= 0){
+    isEmpty() {
+        if (this.index >= 0) {
             return false;
         }
-        else{
+        else {
             return true;
         }
     }
 
-    isFull(){
-        if(front <= max- 1){
+    isFull() {
+        if (this.index === size) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
 }
 
-push(2);
-push(2);
+const obj = new stack();
+obj.push(3);
+obj.push(3);
+obj.push(3);
+console.log(obj.push(3))
+console.log(obj.push(3))
